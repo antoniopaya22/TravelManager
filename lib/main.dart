@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travelmanager/ui/pages/inicio.dart';
+import 'package:travelmanager/theme/theme.dart';
+import 'package:travelmanager/ui/pages/tabs.dart';
 
 void main() => runApp(TravelManager());
 
@@ -9,10 +10,7 @@ class TravelManager extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Travel Manager',
-        theme: ThemeData(
-          accentColor: Colors.blueAccent,
-          primaryColor: Colors.blueAccent
-        ),
-        home: InicioPage());
+        theme: AppTheme.lightTheme,
+        home: TabsPage());
   }
 }

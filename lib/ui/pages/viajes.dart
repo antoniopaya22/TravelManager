@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travelmanager/ui/components/navbar.dart';
+import 'package:travelmanager/theme/color/light_color.dart';
+import 'package:travelmanager/ui/components/header.dart';
 
 class ViajesPage extends StatefulWidget {
   @override
@@ -9,41 +10,23 @@ class ViajesPage extends StatefulWidget {
 class _ViajesPageEstado extends State<ViajesPage> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('TravelManager'),
+    return SingleChildScrollView(
+        child: Container(
+      child: Column(
+        children: <Widget>[
+          Header(
+            titulo: 'Viajes',
+            color: LightColor.purple,
+            colorLeft: LightColor.lightpurple,
+            colorRight: LightColor.darkpurple,
           ),
-          drawer: NavDrawer(),
-          body: TabBarView(
-            children: [
-              Icon(Icons.home),
-              Icon(Icons.airplanemode_active),
-              Icon(Icons.description),
-            ],
-          ),
-          bottomNavigationBar: TabBar(
-              unselectedLabelColor: Colors.blueAccent,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.blueAccent
-              ),
-              tabs: [
-                Tab(
-                  icon: new Icon(Icons.home),
-                  text: 'Inicio',
-                ),
-                Tab(
-                  icon: new Icon(Icons.airplanemode_active),
-                  text: 'Viajes',
-                ),
-                Tab(
-                  icon: new Icon(Icons.description),
-                  text: 'Documentos',
-                ),
-              ]),
-        ));
+          _viajesPage(),
+        ],
+      ),
+    ));
+  }
+
+  Widget _viajesPage() {
+    return Icon(Icons.airplanemode_active);
   }
 }

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:travelmanager/theme/color/light_color.dart';
 import 'package:travelmanager/ui/components/header.dart';
 
-class RutasPage extends StatefulWidget {
+class ArchivosPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _RutasPageEstado();
+  State<StatefulWidget> createState() => _ArchivosPageEstado();
 }
 
-class _RutasPageEstado extends State<RutasPage> {
+class _ArchivosPageEstado extends State<ArchivosPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -15,18 +15,18 @@ class _RutasPageEstado extends State<RutasPage> {
       child: Column(
         children: <Widget>[
           Header(
-            titulo: 'Rutas',
-            color: LightColor.darkseeBlue,
-            colorLeft: LightColor.lightseeBlue,
-            colorRight: LightColor.darkseeBlue,
+            titulo: 'Archivos',
+            color: LightColor.yellow,
+            colorLeft: LightColor.lightOrange,
+            colorRight: LightColor.darkOrange,
           ),
-          _rutasPage(),
+          _archivosPage(),
         ],
       ),
     ));
   }
 
-  Widget _rutasPage() {
+  Widget _archivosPage() {
     return Icon(Icons.home);
   }
 }
